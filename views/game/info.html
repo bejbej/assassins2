@@ -1,0 +1,14 @@
+{{extend 'contentlayout.html'}}
+{{from gluon.contrib.markdown import markdown2}}
+
+{{=LOAD("game","_playerinfo", args=[game.id])}}
+
+{{=LOAD("game","_gamebuttons", args=[game.id])}}
+<h1>{{=game.name}}</h1>
+<h4>{{=game.status_id.description}}</h4>
+<hr>
+{{=XML(markdown2.markdown(game.description))}}
+<h4>Players</h4>
+{{for player in players:}}
+    <span class="{{=player.role_id.name}} {{=player.status_id.name}}">{{=player.user_id.name}}</span><br>
+{{pass}}
