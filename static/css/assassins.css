@@ -22,15 +22,15 @@ h3 {
 .content {
     min-height:100%;
     background-color:#f5f5f5;
+    margin-top:-50px;
     padding:20px;
-    padding-bottom:40px;
+    padding-top:70px;
     box-shadow:0 1px 2px rgba(0,0,0,0.5);
 }
 
 /* Navbar */
 
 .navbar {
-    width:100%;
     background-color:#B71C1C;
     margin-bottom:0px;
     box-shadow: 0 1px 2px rgba(0,0,0,0.5);
@@ -46,15 +46,8 @@ h3 {
     color:white;
 }
 
-.navbar-inverse .navbar-nav>.navbar-divider {
-    width:100%;
-    border-top:1px solid #101010;
-    border-bottom:1px solid rgba(255,255,255,0.1);
-    margin-top:7.5px;
-    margin-bottom:7.5px;
-}
-
 .navbar-inverse .navbar-toggle,
+.navbar-inverse .navbar-toggle:focus,
 .navbar-inverse .navbar-toggle:hover{
     border-color:rgba(0,0,0,0.2);
     background-color:rgba(0,0,0,0.2);
