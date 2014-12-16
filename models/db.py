@@ -130,9 +130,9 @@ db.define_table('player',
 from gluon import current
 current.db = db
 
-db.game_status.update_or_insert(id = 1, name = 'not started')
-db.game_status.update_or_insert(id = 2, name = 'started')
-db.game_status.update_or_insert(id = 3, name = 'finished')
+db.game_status.update_or_insert(id = 1, name = 'not started', description = 'The host has not started this game')
+db.game_status.update_or_insert(id = 2, name = 'started', description = 'Started')
+db.game_status.update_or_insert(id = 3, name = 'finished', description = 'Finished')
 db.player_status.update_or_insert(id = 1, name = 'alive')
 db.player_status.update_or_insert(id = 2, name = 'dead')
 db.player_type.update_or_insert(id = 1, name = 'host')
