@@ -5,12 +5,25 @@
 <form action="{{=URL("creategame","creategame")}}" method="POST">
     <div class="form-group">
         <label>Name</label>
-        <input type="text" class="form-control" name="name" placeholder="Name">
+        <input type="text" class="form-control" name="name" placeholder="Name" value="Another Assassins Game">
     </div>
     <div class="form-group">
         <label>Description</label>
-        <textarea class="form-control" name="description" rows="10" placeholder="Description"></textarea>
+        <textarea class="form-control" name="description" rows="20" placeholder="Description">####How to play
+Once the game starts you will get a target that you need to kill. Once your target has confirmed his or her own death you will get a new target. Be weary. Someone is always out to get you.
+
+####How to kill
+Shoot your target with a foam projectile launcher. If there is a witness, then the kill doesn't count. Assassins have to be stealthy.
+
+####Safe Zones
+In the interest of not creeping too much on people, certain areas are designed as safe zones. These include but are not limited to
+
+- Bathrooms
+- Inside your victim's home, apartment, etc..
+- Inside your victim's workplace
+- Jail
+</textarea>
     </div>
-    <button type="submit" class="btn btn-default">Submit</button>
+    <button type="submit" class="btn btn-primary">Create Game</button>
 </form>
 

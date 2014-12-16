@@ -1,10 +1,9 @@
 {{if any(btn.values()):}}
 
-{{if btn['join']:}}<button id="joingame" class="btn btn-default">Join Game</button>{{pass}}
+{{if btn['join']:}}<button id="joingame" class="btn btn-primary">Join Game</button>{{pass}}
 {{if btn['leave']:}}<button id="leavegame" class="btn btn-default">Leave Game</button>{{pass}}
-{{if btn['start']:}}<button id="startgame" class="btn btn-default">Start Game</button>{{pass}}
-{{if btn['delete']:}}<button id="deletegame" class="btn btn-default">Delete Game</button>{{pass}}
-{{if btn['edit']:}}<button id="" class="btn btn-default">Edit Game</button>{{pass}}
+{{if btn['start']:}}<button id="startgame" class="btn btn-primary">Start Game</button>{{pass}}
+{{if btn['edit']:}}<a class="btn btn-default" href="{{=URL("game","editgame",args=[game.id])}}">Edit Game</a>{{pass}}
 
 <hr>
 

@@ -1,0 +1,25 @@
+{{extend 'contentlayout.html'}}
+
+<h3>Edit Game: {{=game.name}}</h3>
+
+{{=form.custom.begin}}
+<div class="form-group">
+  <label>Name</label>
+  <input type="text" class="form-control" name="name" placeholder="Name" value="{{=form.custom.widget.name['value']}}">
+</div>
+<div class="form-group">
+  <label>Description</label>
+  <textarea class="form-control" name="description" rows="10" placeholder="Description">{{=form.custom.widget.description['value']}}</textarea>
+</div>
+<div class="form-group">
+  <div class="checkbox">
+    <label>
+      <input class="delete cascade_delete" id="delete_record" name="delete_this_record" type="checkbox" value="on">
+      Delete this game
+    </label>
+  </div>
+</div>
+<button type="submit" class="btn btn-primary">Save Changes</button>
+<a href="{{=URL("game","info",args=[game.id])}}" class="btn btn-default">Cancel</a>
+{{=form.custom.end}}
+<hr>

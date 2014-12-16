@@ -129,6 +129,15 @@ h3 {
     border:0px;
 }
 
+.btn-primary {
+    background-color:#2196F3;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color:#1E88E5;
+}
+
 /* Misc */
 .dead {
     text-decoration:line-through;
@@ -136,4 +145,8 @@ h3 {
 
 .host::after {
     content:" (host)"
+}
+
+hr {
+    border-top:1px solid #ddd;
 }

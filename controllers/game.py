@@ -12,6 +12,7 @@ def current():
    
     return dict(games = games)
     
+@auth.requires_login()
 def info():
     game = GetGame(request.args[0])
     
@@ -21,7 +22,27 @@ def info():
     players = GetPlayersByGame(game.id)
 
     return dict(game = game, players = players)
-    
+
+@auth.requires_login()
+def editgame():
+    game = GetGame(request.args[0])
+    player = db.player((db.player.user_id == auth.user_id) & (db.player.game_id == game.id))
+
+    if player is not None:
+        pass
+    if player.role_id.name == 'host':
+        pass
+    else:
+        redirect( URL('game','info', args = [game.id]))
+
+    db.game.status_id.readable = db.game.status_id.writable = False
+    form = SQLFORM(db.game, game, deletable=True)
+
+    if form.accepts(request,session):
+        redirect( URL('game','info', args = [game.id]))
+
+    return dict(game = game, form = form)
+
 #Partial Pages
     
 def _gamebuttons():
