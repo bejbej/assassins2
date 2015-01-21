@@ -1,9 +1,9 @@
-{{extend 'contentlayout.html'}}
+{{extend 'layout.html'}}
 
-<h3>My current games</h3>
+<h1 class="title">My current games</h1>
 
 {{for game in games:}}
-    <div class="panel">
+    <div class="panel game">
         <a href="{{=URL("game","info")}}/{{=game.id}}" class="panel-body">
             <span>{{=game.name}}</span>
             <span class="pull-right">{{=game.status_id.name}}</span>

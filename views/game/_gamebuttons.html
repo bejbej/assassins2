@@ -5,8 +5,6 @@
 {{if btn['start']:}}<button id="startgame" class="btn btn-primary">Start Game</button>{{pass}}
 {{if btn['edit']:}}<a class="btn btn-default" href="{{=URL("game","editgame",args=[game.id])}}">Edit Game</a>{{pass}}
 
-<hr>
-
 <script type="text/javascript">
     $(document).ready(function () {
         $("#joingame").on("click", function () {

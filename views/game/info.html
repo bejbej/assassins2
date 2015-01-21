@@ -1,14 +1,29 @@
-{{extend 'contentlayout.html'}}
+{{extend 'layout.html'}}
 {{from gluon.contrib.markdown import markdown2}}
 
-{{=LOAD("game","_playerinfo", args=[game.id])}}
+<div class="panel panel-user square">
+    <div class="panel-heading">
+        <h3>{{=game.name}}</h3>
+    </div>
+    <div class="panel-body" style="text-align:center;">
+        <div class="btn-group">
+            <a href="#PlayerInfo" role="tab" data-toggle="tab" class="btn btn-default">My status</a>
+            <a href="#GameInfo" role="tab" data-toggle="tab" class="btn btn-default">Game info</a>
+        </div>
+    </div>
+    <div class="panel-body tab-content">
+        <div role="tabpanel" class="tab-pane" id="PlayerInfo">
+            {{=LOAD("game","_playerinfo", args=[game.id])}}
+        </div>
+        <div role="tabpanel" class="tab-pane active" id="GameInfo">
+            <h4>{{=game.status_id.description}}</h4>
+            {{=LOAD("game","_gamebuttons", args=[game.id])}}
+            {{=XML(markdown2.markdown(game.description))}}
+            <h4>Players</h4>
+            {{for player in players:}}
+                <span class="{{=player.role_id.name}} {{=player.status_id.name}}">{{=player.user_id.name}}</span><br>
+            {{pass}}
+        </div>
+    </div>
 
-{{=LOAD("game","_gamebuttons", args=[game.id])}}
-<h1>{{=game.name}}</h1>
-<h4>{{=game.status_id.description}}</h4>
-<hr>
-{{=XML(markdown2.markdown(game.description))}}
-<h4>Players</h4>
-{{for player in players:}}
-    <span class="{{=player.role_id.name}} {{=player.status_id.name}}">{{=player.user_id.name}}</span><br>
-{{pass}}
+</div>

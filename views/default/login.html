@@ -1,4 +1,8 @@
-{{extend 'default/userlayout.html'}}
+{{extend 'layout.html'}}
+
+<div class="col-sm-offset-3 col-sm-6">
+    <div class="panel panel-user square">
+        <div class="panel-body">
 
 <h3>Log In</h3>
 {{if form.errors:}}
@@ -30,4 +34,6 @@
     <button type="submit" class="btn btn-primary">Log In</button>
 {{=form.custom.end}}
 
-
+        </div>
+    </div>
+</div>
